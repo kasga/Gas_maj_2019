@@ -206,7 +206,7 @@ p{
 
 
 /* FORMS */
-#block-form-acf-3, #block-form-acf-5{
+#block-form-acf-3, #block-form-acf-5, #block-form-acf-7, #block-form-acf-9{
   display:none;
 }
 
@@ -256,14 +256,14 @@ _:-ms-fullscreen, :root #o-agreement-product-check-1 {
 
 
 .o-product{
-  position: relative;
+ position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 368px;
+  max-width: 330px;
   width:100%;
-  margin:3px 10px;
+  margin:3px;
   border-radius: 4px;
-  padding: 45px;
+  padding: 35px 30px;
   background-color:#ffffff;
   color:#000000;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
@@ -297,7 +297,7 @@ _:-ms-fullscreen, :root #o-agreement-product-check-1 {
   font-family: "OrstedSans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
-  font-size: 22px;
+  font-size: 19px;
 }
 
 

@@ -80,7 +80,13 @@ function initGestures() {
     var form;
 
     if (selected === "SP") form = jQuery("#block-form-acf-3").offset().top;
-    else if (selected === "FP") form = jQuery("#block-form-acf-5").offset().top;
+    else if (selected === "FP36")
+      form = jQuery("#block-form-acf-9").offset().top;
+    else if (selected === "FP24")
+      form = jQuery("#block-form-acf-7").offset().top;
+    else if (selected === "FP12")
+      form = jQuery("#block-form-acf-5").offset().top;
+    else form = jQuery("#block-form-acf-5").offset().top;
 
     ///Scrolls the window up to the Agreement area
     jQuery("html, body")
@@ -101,10 +107,73 @@ function updateOverlay(p) {
 
   // Starts by showing the right overlay. Either fixed og variable
   jQuery(".o-overlay-content").addClass("o-hide");
+  jQuery(".o-overlay-content .o-period-link").addClass("o-hide");
   if (p === "SP") {
     jQuery(".o-overlay-content.o-variable-price").removeClass("o-hide");
+  } else if (p === "FP36") {
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-end-date")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".ed36")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-kwh")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".fp36")
+      .removeClass("o-hide");
+    jQuery(".o-overlay-content")
+      .find(".o-period-link.fp36")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price").removeClass("o-hide");
+  } else if (p === "FP24") {
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-end-date")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".ed24")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-kwh")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".fp24")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content")
+      .find(".o-period-link.fp24")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price").removeClass("o-hide");
+  } else if (p === "FP12") {
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-end-date")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".ed12")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".o-overlay-kwh")
+      .addClass("o-hide");
+    jQuery(".o-overlay-content.o-fixed-price")
+      .find(".fp12")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content")
+      .find(".o-period-link.fp12")
+      .removeClass("o-hide");
+
+    jQuery(".o-overlay-content.o-fixed-price").removeClass("o-hide");
   } else {
     jQuery(".o-overlay-content.o-fixed-price").removeClass("o-hide");
+    jQuery(".o-overlay-content")
+      .find(".o-period-link")
+      .removeClass("o-hide");
   }
 }
 
@@ -113,11 +182,19 @@ function handleForms() {
   //Hides all the forms, and shows the active one
   jQuery("#block-form-acf-3").removeClass("o-show");
   jQuery("#block-form-acf-5").removeClass("o-show");
+  jQuery("#block-form-acf-7").removeClass("o-show");
+  jQuery("#block-form-acf-9").removeClass("o-show");
 
   if (selected === "SP") {
     jQuery("#block-form-acf-3").addClass("o-show");
-  } else if (selected === "FP") {
+  } else if (selected === "FP36") {
+    jQuery("#block-form-acf-9").addClass("o-show");
+  } else if (selected === "FP24") {
+    jQuery("#block-form-acf-7").addClass("o-show");
+  } else if (selected === "FP12" || selected === "FP") {
     jQuery("#block-form-acf-5").addClass("o-show");
+  } else {
+    //jQuery("#block-form-acf-5").addClass("o-show");
   }
 }
 
